@@ -15,7 +15,8 @@
     { id: "orquestra", cat: "musica", nome: "Orquestra jovem convida", local: "Teatro da Esquina", data: [2026, 12, 4, 20, 0], preco: "R$ 25", desc: "A orquestra jovem recebe convidados para um programa de trilhas de cinema, com regência de alunos do último ano." },
     { id: "silencioso", cat: "cinema", nome: "Cinema silencioso com piano ao vivo", local: "Cine Galpão", data: [2026, 12, 5, 18, 0], preco: "R$ 20", desc: "Dois filmes clássicos da era muda, acompanhados por improviso de piano. A sessão dura cerca de 100 minutos." },
     { id: "lambe", cat: "oficina", nome: "Oficina de lambe-lambe", local: "Galeria Subsolo", data: [2026, 12, 12, 10, 0], preco: "R$ 60", desc: "Aprenda a criar, imprimir e colar cartazes. Material incluso, 20 vagas. Cada participante leva seus cartazes para casa." },
-    { id: "encerramento", cat: "musica", nome: "Festa de encerramento com Cerrado Neon", local: "Clube Aurora", data: [2026, 12, 19, 21, 0], preco: "R$ 45", desc: "A banda Cerrado Neon fecha a temporada com repertório próprio e participações especiais. Pista aberta e bar no local." }
+    { id: "encerramento", cat: "musica", nome: "Festa de encerramento com Cerrado Neon", local: "Clube Aurora", data: [2026, 12, 19, 21, 0], preco: "R$ 45", desc: "A banda Cerrado Neon fecha a temporada com repertório próprio e participações especiais. Pista aberta e bar no local." },
+    { id: "fotocelular", cat: "oficina", nome: "Oficina de fotografia com celular", local: "Galeria Subsolo", data: [2026, 12, 6, 14, 0], preco: "R$ 40", desc: "Aprenda enquadramento, luz natural e edição básica usando só o celular. Leve o seu aparelho e carregador. São 15 vagas e a oficina dura 3 horas." },
   ].map(e => ({ ...e, quando: new Date(...[e.data[0], e.data[1] - 1, e.data[2], e.data[3], e.data[4]]) }))
    .sort((a, b) => a.quando - b.quando);
 
