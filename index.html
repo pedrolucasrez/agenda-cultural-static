@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda Cultural</title>
+  <meta name="description" content="Música, teatro, cinema e feiras de novembro e dezembro de 2026, colados no mesmo muro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="pular" href="#agenda">Ir para a agenda</a>
+
+  <header class="topo">
+    <a class="marca" href="#inicio">Agenda<br>Cultural</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#agenda">Eventos</a>
+      <a href="#sobre">Como funciona</a>
+      <a href="#receber">Receber a agenda</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <h1 class="titulo" aria-label="Agenda Cultural">
+        <span data-t="Agenda" aria-hidden="true">Agenda</span>
+        <span data-t="Cultural" aria-hidden="true">Cultural</span>
+      </h1>
+      <div class="hero-info">
+        <p class="chamada">Novembro e dezembro de 2026. Música, teatro, cinema e feiras, tudo colado no mesmo muro.</p>
+        <div class="proximo" id="proximo" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="agenda" id="agenda">
+      <div class="barra">
+        <div class="fitas" role="group" aria-label="Filtrar por categoria" id="fitas">
+          <button class="fita" data-cat="todos" aria-pressed="true">Todos</button>
+          <button class="fita" data-cat="musica" aria-pressed="false">Música</button>
+          <button class="fita" data-cat="teatro" aria-pressed="false">Teatro</button>
+          <button class="fita" data-cat="cinema" aria-pressed="false">Cinema</button>
+          <button class="fita" data-cat="exposicao" aria-pressed="false">Exposição</button>
+          <button class="fita" data-cat="feira" aria-pressed="false">Feira</button>
+          <button class="fita" data-cat="oficina" aria-pressed="false">Oficina</button>
+        </div>
+        <label class="busca">
+          <span class="sr">Buscar evento</span>
+          <input type="search" id="busca" placeholder="Buscar por nome ou lugar" autocomplete="off">
+        </label>
+      </div>
+      <p class="contagem" id="contagem" aria-live="polite"></p>
+      <ul class="mural" id="mural"></ul>
+      <p class="vazio" id="vazio" hidden>Nenhum evento encontrado. Limpe a busca ou escolha outra categoria.</p>
+    </section>
+
+    <section class="sobre" id="sobre">
+      <p class="sobre-frase">Filtre, marque o que quer ver e leve tudo para o seu calendário de uma vez.</p>
+      <p class="sobre-texto">Clique em “Quero ir” nos cartazes que interessam. Uma barra aparece no rodapé e baixa um arquivo .ics, que abre no Google Agenda, no Outlook e no calendário do celular. Este site foi feito para um estudo de caso de Git e GitHub, e todos os eventos são fictícios.</p>
+    </section>
+
+    <section class="receber" id="receber">
+      <form id="form" novalidate>
+        <label for="email">Seu e-mail</label>
+        <div class="linha">
+          <input type="email" id="email" name="email" placeholder="voce@exemplo.com" autocomplete="email" aria-describedby="msg">
+          <button type="submit">Receber a agenda</button>
+        </div>
+        <p class="msg" id="msg" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Agenda Cultural, projeto de estudo da Equipe Horizonte. Publicado com GitHub Pages.</p>
+  </footer>
+
+  <div class="barra-fav" id="barraFav" hidden>
+    <p><b id="nFav">0</b> <span id="txtFav">marcados</span></p>
+    <button id="baixarTodos">Baixar no calendário</button>
+    <button id="limpar" class="sec">Limpar</button>
+  </div>
+
+  <dialog id="detalhe" aria-labelledby="dTitulo"></dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
